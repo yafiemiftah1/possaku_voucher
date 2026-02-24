@@ -1,4 +1,6 @@
 
+import { Helmet } from "react-helmet-async";
+
 export default function Voucher() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -49,30 +51,36 @@ export default function Voucher() {
   };
 
   return (
-    <div className="voucher-split-bg">
-      <div className="voucher-split-container">
-        <div className="voucher-split-left">
-          <div className="voucher-split-title">Ayo Daftar Sekarang Juga!</div>
-          <form onSubmit={handleSend} className="voucher-split-form">
-            <label className="voucher-split-label" htmlFor="phone">Nomor Handphone <span style={{color:'#e53935'}}>*</span></label>
-            <input
-              id="phone"
-              type="tel"
-              placeholder="Contoh: 6281XXXXXXXXX"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-            <button type="submit">Kirim Voucher</button>
-          </form>
-          <div className="voucher-split-message">{message}</div>
-          <button className="voucher-logout" onClick={handleLogout} style={{marginTop:'1rem'}}>Logout</button>
-        </div>
-        <div className="voucher-split-right">
-          <img src={promoImg} alt="Promo" className="voucher-split-img" />
+    <>
+      <Helmet>
+        <title>Voucher - Possaku Redeem Voucher</title>
+        <meta name="description" content="Halaman pengiriman voucher Possaku Redeem Voucher." />
+      </Helmet>
+      <div className="voucher-split-bg">
+        <div className="voucher-split-container">
+          <div className="voucher-split-left">
+            <div className="voucher-split-title">Ayo Daftar Sekarang Juga!</div>
+            <form onSubmit={handleSend} className="voucher-split-form">
+              <label className="voucher-split-label" htmlFor="phone">Nomor Handphone <span style={{color:'#e53935'}}>*</span></label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="Contoh: 6281XXXXXXXXX"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+              <button type="submit">Kirim Voucher</button>
+            </form>
+            <div className="voucher-split-message">{message}</div>
+            <button className="voucher-logout" onClick={handleLogout} style={{marginTop:'1rem'}}>Logout</button>
+          </div>
+          <div className="voucher-split-right">
+            <img src={promoImg} alt="Promo" className="voucher-split-img" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 // ...existing code...

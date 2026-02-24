@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "../LoginSimple.css";
 
 export default function Login() {
@@ -41,28 +43,34 @@ export default function Login() {
 
 
   return (
-    <div className="login-bg">
-      <div className="login-container">
-        <div className="login-title">Login Admin</div>
-        <form onSubmit={handleLogin} className="login-form">
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-        </form>
-        <div className="login-message">{message}</div>
+    <>
+      <Helmet>
+        <title>Login - Possaku Redeem Voucher</title>
+        <meta name="description" content="Halaman login admin untuk Possaku Redeem Voucher." />
+      </Helmet>
+      <div className="login-bg">
+        <div className="login-container">
+          <div className="login-title">Login Admin</div>
+          <form onSubmit={handleLogin} className="login-form">
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          <div className="login-message">{message}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
