@@ -16,7 +16,7 @@ export default function Login() {
 
     try {
         const res = await axios.post(
-        "https://possaku.store/dev/core/loginAdmin",
+        "https://possaku.store/production/core/loginAdmin",
         { username, password }
         );
 

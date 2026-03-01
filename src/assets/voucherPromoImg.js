@@ -1,3 +1,3 @@
 // Example illustration for the right side. Replace with your own image if needed.
-import promoImg from "../assets/BG-Gampong.png";
+import promoImg from "../assets/BG-Gampong2.png";
 export default promoImg;

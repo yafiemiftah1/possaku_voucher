@@ -23,10 +23,10 @@ export default function Voucher() {
     }
     try {
       const res = await axios.get(
-        `https://possaku.store/dev/notification/generateVoucherWA/${phone}`,
+        `https://possaku.store/production/core/notification/generateVoucherWA/${phone}`,
         {
           params: {
-            campaign_id: "6980bb6f09dddd5c41b8cdff",
+            campaign_id: "69a3c36372871500127bcdde",
           },
           headers: {
             ussd: sessionStorage.getItem("ussd"),
