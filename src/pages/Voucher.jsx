@@ -23,7 +23,7 @@ export default function Voucher() {
     }
     try {
       const res = await axios.get(
-        `https://possaku.store/production/core/notification/generateVoucherWA/${phone}`,
+        `https://possaku.store/production/notification/generateVoucherWA/${phone}`,
         {
           params: {
             campaign_id: "69a3c36372871500127bcdde",
